@@ -1,2 +1,5 @@
 venv/
 __pychache__/
+config.py
+__pycache__/run.cpython-38.pyc
+movements/__pycache__/
