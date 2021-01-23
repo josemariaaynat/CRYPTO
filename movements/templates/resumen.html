@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title%}Resumen de totales{% endblock %}
+
+{% block contenido%}
+    <form action="resumen" method="post">
+        <div class="field">
+            <label for="from_currency">From:</label>
+            <input type="text" name="from_currency" required>
+        </div>
+        <div class="field">
+            <label for="from_quantity">Cantidad:</label>
+            <input type="number" name="from_quantity" step="0.00001"required>
+        </div>
+        <div class="field">
+            <label for="to_currency">To:</label>
+            <input type="text" name="to_currency" required>
+        </div>
+        <div class="field">
+            <label for="to_quantity">Cantidad:</label>
+            <input type="number" name="to_quantity" step="0.00001"required>
+        </div>
+        <br>
+        <div class="field">
+            <input type="submit" value="&#10004">
+        </div>
+        <div class="field">
+            <input type="submit" value="X">
+        </div>
+
+    </form>
+{% endblock %}

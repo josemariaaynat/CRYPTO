@@ -3,16 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title%</title>
+    <title>Cuadro Cryptos-{% block title%}{% endblock %}</title>
+    <style>
+        *{font-family: sans-serif;}
+        header {
+        color: white;
+        background-color: black;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <p>Boot Z6-CASH</p>
+        <p>ANÁLISIS MOVIMIENTOS CRYPTOMONEDAS</p>
     </header>
 
     <section>
-        <h1>Lista de Movimientos</h1>
-        <p>aqui va mi lista</p>
+        {% block contenido%}{% endblock %}
     </section>
     <footer>
         &copy;2021-2022. Todos los derechos reservados

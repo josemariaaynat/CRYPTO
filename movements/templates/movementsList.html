@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title%}Listado Cryptos{% endblock %}
+
+{% block contenido%}
+        {% if ingresos is not none%}        
+                <h1>Lista de Movimientos</h1>
+                <h1>Compra <a href="nuevacompra">nueva</a></h1>
+                <p>Inicio/Compra/Satus</p>
+                <table>
+                        <tr>
+                                <th>Fecha</th>
+                                <th>Hora</th>
+                                <th>From</th>
+                                <th>Q</th>
+                                <th>To</th>
+                                <th>Q</th>
+                                <th>P.U</th>
+                        </tr>
+                {% for registro in datos %}        
+                        <tr>
+                                <td>{{ registro[0] }}</td>
+                                <td>{{ registro[1] }}</td>
+                                <td>{{ registro[2] }}</td>
+                                <td>{{ registro[3] }}</td>
+                                <td>{{ registro[4] }}</td>
+                                <td>{{ registro[5] }}</td>
+                                <td>{{ registro[6] }}</td>
+                        </tr>
+                {% endfor %}
+                        <tr>
+                                <td colspan="4">Total:{{total}} </td>
+                        </tr>
+                </table>
+        {% else %}
+
+{% endblock %}
+
