@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+        {% block title%}Listado Cryptos{% endblock %}
+        {% block titulo2 %} Listado de Cryptos{% endblock %}
+
+        {% block contenido %}
+        <div>
+                {% if datos|length > 0 %}
+                <table>
+                <tr>
+                        <th class="fecha">Fecha</th>
+                        <th class="hora">Hora</th>
+                        <th class="monedafrom">From</th>
+                        <th class="cantidadfrom">Q</th>
+                        <th class="monedato">To</th>
+                        <th class="cantidadto">Q</th>
+                        <th class="conversion">P.U</th>
+                </tr>
+                {% for registro in datos %}
+                <tr>
+                        <td>{{ registro['fecha'] }}</td>
+                        <td>{{ registro['hora'] }}</td>
+                        <td>{{ registro['monedafrom'] }}</td>
+                        <td>{{ registro['cantidadfrom'] }}</td>
+                        <td>{{ registro['monedato'] }}</td>
+                        <td>{{ registro['cantidadto'] }}</td>
+                        <td>{{ registro['conversion'] }}</td>
+                </tr>
+                {% endfor %}
+                </table>
+                {% else %}
+                <p>Aún no has realizado ninguna compra, pulsa el +</p>
+                {% endif %}
+        </div>
+        {% endblock %}

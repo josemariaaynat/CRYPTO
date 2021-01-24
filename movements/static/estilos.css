@@ -1,98 +1,91 @@
-*{
-    color: rgb(216, 166, 31);
-    font-family: 'Montserrat', sans-serif;
+body > header, body > main, body > footer {
+    padding: 16px;
+    background-image: url("C:\Users\josem\Sites\katas\FLASK_PROYECTO\movements\static\mundo.jpg");
+    background-color: #cccccc;
 }
 
-body {
-    background-attachment: fixed;
-    background-image: url('fondo.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 80%;
-    margin: 10% auto;
+section.container {
+    min-height: calc(100wh - 90px);
 }
 
-#fondo {
-    background-color: rgb(0, 0, 0, .6);
-    padding: 2em;
-    width: cover;
-    height: cover;
-    max-width: 80%;
-    max-height: 80%;
-    border-radius: 2em;
-    position: center;
+header, footer {
+    background-color: var(--background);
+}
 
+header {
+    display: grid;
+    grid-template-columns: auto 25%;
+}
+
+.header_kakebo {
+    display: flex;
+    align-items: center;
+}
+
+.header_title {
+    font-size:2em;
+    font-weight: bold;
+    color: var(--primary);
+    text-align: center;
+}
+
+.title {
+    line-height: 30px;
+    margin: var(--button-spacing-vertical) 0;
+}
+
+.title_text {
+    margin: var(--button-spacing-vertical) 0;
+}
+
+.title_button-new {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 nav {
-    width:100%;
-    display:flex;
-    align-items: center;
-    justify-content: center;
+    display: flex;
+    justify-content: flex-end;
 }
-ul {
-    margin-top: 0;
-    margin-bottom: 0;
-    text-align: left;
-    padding: 0%;
-  }
+th.fecha {
+    width: 20%;
+} 
 
-li {
-    border-style: solid;
-    border-width: thin;
-    border-color: rgb(216, 166, 31);
-    border-radius: 1em;
-    color: rgb(216, 166, 31);
-    font-family: 'Montserrat', sans-serif;
-    display: inline;
-    margin: 0.5em;
-    margin-top: 0;
-    padding: 0.5em;
-
+th.concepto {
+    width: 50%;
 }
 
-
-a {
-    outline: none;
-    text-decoration: none;
-    display: inline-block;
-    text-align: center;
-    line-height: 3;
-    color: rgb(216, 166, 31);
-    padding: 1em;
-}
-
-li:last-child a {
-    margin-right: 0;
-  }
-
-a:hover {
-    color: white;
-    border-color: white;
-}
-
-th, td {
-    width: 5%;
+th.importe, td.importe {
+    width: 25%;
     text-align: right;
-    vertical-align: top;
-    padding: 0.25em;
-    border-bottom: 1px solid #999;
- }
+}
 
- th {
-    background: rgb(204, 185, 11, .5);
-    text-align: center;
- }
+th.acciones {
+    width: 10%;
+}
 
- .titulo{
-    margin-top: 0;
-    margin-bottom: 0;
-    font-family: 'Imbue', serif;
-    text-align: left;
-    color: rgb(216, 166, 31);
-    font-size: 36pt;
- }
+td.total {
+    text-align: right;
+    color: var(--contrast-hover);
+    font-size: 1.2em;
+    font-weight: bold;
+}
 
-.mon{
-    color: green;
+.container {
+    margin-top: 30px;
+    min-height: calc(100vh - 194px);
+}
+
+.err-msg {
+    color: var(--invalid);
+    font-size: 0.8em;
+    font-weight: bold;
+    padding: 0;
+    margin: 0
+}
+
+.error-data {
+    margin-bottom: 0 !important;
+    border-color: var(--invalid);
 }

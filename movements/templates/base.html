@@ -3,23 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cuadro Cryptos-{% block title%}{% endblock %}</title>
-    <style>
-        *{font-family: sans-serif;}
-        header {
-        color: white;
-        background-color: black;
-        }
-    </style>
+    <link rel="stylesheet" href="../static/estilos.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Imbue:wght@300&display=swap" rel="stylesheet"> 
+
+    <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
-    <header>
-        <p>ANÁLISIS MOVIMIENTOS CRYPTOMONEDAS</p>
-    </header>
-
-    <section>
-        {% block contenido%}{% endblock %}
-    </section>
+        <nav>
+            <ul class="menu"> 
+                <li class="item"><a href="/">Listado</a></li>
+                <li class="item"><a href="/nuevacompra">Nueva Operación</a></li>
+                <li class="item"><a href="/resumen">Resumen</a></li>
+            </ul>
+        </nav>
+        <div>
+            {% block titulo2 %}{% endblock %}
+        </div>
+        <section>
+            {% block contenido %} {% endblock %}
+        </section>
+    </div>
     <footer>
         &copy;2021-2022. Todos los derechos reservados
     </footer>

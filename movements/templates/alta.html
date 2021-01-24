@@ -1,32 +1,42 @@
 {% extends "base.html" %}
 
-{% block title%}Nuevo Movimiento{% endblock %}
-
-{% block contenido%}
-    <form action="creaalta" method="post">
+    {% block title %} Transacciones {% endblock %}
+    {% block contenido %}
+    <form action="nuevacompra" method="post">
+        {{ form.csrf_token }}
         <div class="field">
-            <label for="from_currency">From:</label>
-            <input type="text" name="from_currency" required>
+            <div class="field">
+                {{ form.monedafrom.label }}
+                {{ form.monedafrom }}
+            </div>
+            <div class="mon">
+                {{ form.monedato.label }}
+                {{ form.monedato }}
+            </div>
+            <div class="field">
+                {{ form.cantidadfrom.label }}
+                {{ form.cantidadfrom(placeholder='Escribe un número') }}
+                {% for error in form.cantidadfrom.errors %}
+                    <p class="err-msg">
+                        {{ error }}
+                    </p>
+                {% endfor %}
+            </div>
+            <div class="field">
+                {{ form.cantidadto.label }}
+                {{ form.cantidadto(placeholder='Escribe un número') }}
+                {% for error in form.cantidadto.errors %}
+                    <p class="err-msg">
+                        {{ error }}
+                    </p>
+                {% endfor %}
+            </div>
         </div>
         <div class="field">
-            <label for="from_quantity">Cantidad:</label>
-            <input type="number" name="from_quantity" step="0.00001"required>
-        </div>
+            {{ form.submit }}
+        </div>  
         <div class="field">
-            <label for="to_currency">To:</label>
-            <input type="text" name="to_currency" required>
-        </div>
-        <div class="field">
-            <label for="to_quantity">Cantidad:</label>
-            <input type="number" name="to_quantity" step="0.00001"required>
-        </div>
-        <br>
-        <div class="field">
-            <input type="submit" value="&#10004">
-        </div>
-        <div class="field">
-            <input type="submit" value="X">
-        </div>
-
+            {{ form.calc }}
+        </div>  
     </form>
-{% endblock %}
+    {% endblock %}
